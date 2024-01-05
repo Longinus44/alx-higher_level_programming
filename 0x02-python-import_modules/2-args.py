@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-from sys import argv
 
 if __name__ == "__main__":
+    from sys import argv
+
     args_len = len(argv) - 1
 
     print("{} argument{}{}:".format(args_len, 's' if args_len !=
