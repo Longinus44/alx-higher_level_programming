@@ -14,5 +14,4 @@ Methods:
 
 class Square():
 	"""represents empty Square class"""
-
 	pass
