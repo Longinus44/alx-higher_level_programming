@@ -52,8 +52,12 @@ class Rectangle:
         return 2 * (self.__width + self.__height) 
     
     def __str__(self) -> str:
-        """
-        
+        """  
+        If either width or height is equal to 0, an empty string is returned.
+        The rectangle is represented by repeating '#' characters in the specified format.
+
+        Returns:
+            str: String representation of the rectangle.
         """
         if self.__height == 0 or self.__width == 0:
             return ""
