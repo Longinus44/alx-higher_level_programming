@@ -10,8 +10,8 @@ class Rectangle:
             parameters:
                 width and height
         """
-        self.width = width
-        self.height = height
+        self.__width = width
+        self.__height = height
 
     @property
     def width(self):
@@ -40,3 +40,13 @@ class Rectangle:
         elif value < 0 :
             raise ValueError("height must be >= 0")
         self.__height = value
+
+    def area(self):
+        """ returns the area """
+        return self.__width * self.__height
+        
+    def perimeter(self):
+        """ return the perimeter"""
+        return 2 * (self.__width + self.__height) 
+    
+    
