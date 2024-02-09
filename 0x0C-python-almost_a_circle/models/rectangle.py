@@ -73,3 +73,7 @@ class Rectangle(Base):
         """this method prints # in height times"""
         for i in range(self.__height):
             print("#" * self.__width)
+
+    def __str__(self):
+        """the string print format"""
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, (self.__x), (self.__y), (self.__width), (self.__height)))
