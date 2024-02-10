@@ -28,8 +28,8 @@ class Square(Rectangle):
         """Update the square attributes"""
         if args:
             attributes = ["id", "size", "x", "y"]
-            for i in enumerate(args):
-                setattr(self, attributes[i], args)
+            for i, arg in enumerate(args):
+                setattr(self, attributes[i], arg)
         elif kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
