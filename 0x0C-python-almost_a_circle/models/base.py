@@ -39,3 +39,11 @@ class Base:
         with open(filename, "w") as file:
             json_string = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
             file.write(json_string)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns the list of the JSON string representation json_string"""
+        if not json_string:
+            return []
+        else:
+            return json.loads(json_string)
