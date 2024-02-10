@@ -76,6 +76,20 @@ class Rectangle(Base):
         for i in range(self.__height):
             print(" " * self.__x + "#" * self.__width)
 
+    def update(self, *args):
+        """Assign arguments to attributes"""
+        num_arg = len(args)
+        if num_arg >= 1:
+            self.id = args[0]
+        if num_arg >= 2:
+            self.width = args[1]
+        if num_arg >= 3:
+            self.height = args[2]
+        if num_arg >= 4:
+            self.x = args[3]
+        if num_arg >= 5:
+            self.y = args[4]
+
     def __str__(self):
         """the string print format"""
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, (self.__x), (self.__y), (self.__width), (self.__height)))
