@@ -76,19 +76,15 @@ class Rectangle(Base):
         for i in range(self.__height):
             print(" " * self.__x + "#" * self.__width)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Assign arguments to attributes"""
-        num_arg = len(args)
-        if num_arg >= 1:
-            self.id = args[0]
-        if num_arg >= 2:
-            self.width = args[1]
-        if num_arg >= 3:
-            self.height = args[2]
-        if num_arg >= 4:
-            self.x = args[3]
-        if num_arg >= 5:
-            self.y = args[4]
+        if args:
+            attriutes = ["id", "width", "height", "x", "y"]
+            for i in enumerate(args):
+                setattr(self, attriutes[i], args)
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     def __str__(self):
         """the string print format"""
