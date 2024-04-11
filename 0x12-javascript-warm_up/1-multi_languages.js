@@ -1,11 +1,6 @@
 #!/usr/bin/node
 
-let cIsFun, python, javascript;
+console.log("C is fun");
+console.log("Python is cool");
+console.log("JavaScript is amazing");
 
-cIsFun = 'C is fun';
-python = 'Python is cool';
-javascript = 'JavaScript is amazing';
-
-console.log(cIsFun)
-console.log(python);
-console.log(javascript);
