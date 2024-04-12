@@ -11,4 +11,4 @@ function add (a, b) {
   return numA + numB;
 }
 
-module.export = add;
+module.exports.add = add;
