@@ -2,7 +2,7 @@
 
 const request = require('request');
 
-const movieId = process.argv[2];
+const movieId = process.argv[1];
 
 if (!movieId) {
   console.error('Please provide a movie ID as the first argument.');
