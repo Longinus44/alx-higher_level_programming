@@ -2,8 +2,8 @@
 
 const fs = require('fs');
 
-const filePath = process.argv[2];
-const fileContent = process.argv[3];
+const filePath = process.argv[1];
+const fileContent = process.argv[2];
 
 if (!filePath || !fileContent) {
   console.error('Please provide a file path as the first argument and a string to write as the second argument.');
