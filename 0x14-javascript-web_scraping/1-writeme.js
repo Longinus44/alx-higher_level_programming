@@ -10,7 +10,7 @@ function writeToFile (filePath, content) {
     if (err) {
       console.error(err);
     } else {
-      console.log(content);
+      console.log(contentUtf8);
     }
   });
 }
