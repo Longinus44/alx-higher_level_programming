@@ -1,8 +1,8 @@
-#!/usr/bin/node
+#!/usr/bin/env node
 
 const request = require('request');
 
-const movieId = process.argv[1];
+const movieId = process.argv[2];
 
 if (!movieId) {
   console.error('Please provide a movie ID as the first argument.');
@@ -13,16 +13,14 @@ const url = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 
 request(url, (error, response, body) => {
   if (error) {
-    console.error('Error:', error);
+    console.error('Error fetching movie data:', error);
     return;
   }
 
-  if (response.statusCode !== 200) {
-    console.error(`Failed to retrieve data: ${response.statusCode}`);
-    return;
+  try {
+    const data = JSON.parse(body);
+    console.log(data.title);
+  } catch (error) {
+    console.error(error);
   }
-
-  const data = JSON.parse(body);
-
-  console.log(`Title: ${data.title}`);
 });
