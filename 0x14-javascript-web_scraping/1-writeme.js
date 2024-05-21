@@ -1,19 +1,28 @@
 #!/usr/bin/node
 
+
 const fs = require('fs');
 
-const filePath = process.argv[1];
-const fileContent = process.argv[2];
+function writeToFile(filePath, content) {
+  // Encode the content as UTF-8 before writing
+  const contentUtf8 = Buffer.from(content, 'utf-8');
 
-if (!filePath || !fileContent) {
-  console.error('Please provide a file path as the first argument and a string to write as the second argument.');
+  fs.writeFile(filePath, contentUtf8, (err) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log(content);
+    }
+  });
+}
+
+// Check if called directly with arguments
+if (process.argv.length !== 3) {
+  console.error("Usage: node script.js <filepath> <string>");
   process.exit(1);
 }
 
-fs.writeFile(filePath, fileContent, 'utf-8', (err) => {
-  if (err) {
-    console.error(err);
-  } else {
-    console.log(fileContent);
-  }
-});
+const filePath = process.argv[2];
+const content = process.argv[3];
+
+writeToFile(filePath, content);

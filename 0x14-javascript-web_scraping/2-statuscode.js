@@ -5,14 +5,14 @@ const request = require('request');
 const url = process.argv[2];
 
 if (!url) {
-	console.error('Please provide a URL as the first argument.');
-	process.exit(1);
+  console.error('Please provide a URL as the first argument.');
+  process.exit(1);
 }
 
 request(url, (error, response) => {
-	if (error) {
-		console.error('Error:', error);
-	} else {
-		console.log(`code: ${response.statusCode}`);
-	}
+  if (error) {
+    console.error('Error:', error);
+  } else {
+    console.log(`code: ${response.statusCode}`);
+  }
 });
