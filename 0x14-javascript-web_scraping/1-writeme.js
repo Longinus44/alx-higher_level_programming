@@ -1,9 +1,8 @@
 #!/usr/bin/node
 
-
 const fs = require('fs');
 
-function writeToFile(filePath, content) {
+function writeToFile (filePath, content) {
   // Encode the content as UTF-8 before writing
   const contentUtf8 = Buffer.from(content, 'utf-8');
 
@@ -18,7 +17,7 @@ function writeToFile(filePath, content) {
 
 // Check if called directly with arguments
 if (process.argv.length !== 3) {
-  console.error("Usage: node script.js <filepath> <string>");
+  console.error('Usage: node script.js <filepath> <string>');
   process.exit(1);
 }
 
