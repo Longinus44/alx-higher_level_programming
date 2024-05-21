@@ -10,15 +10,9 @@ function writeToFile (filePath, content) {
     if (err) {
       console.error(err);
     } else {
-      console.log(contentUtf8);
+      console.log(content);
     }
   });
-}
-
-// Check if called directly with arguments
-if (process.argv.length !== 3) {
-  console.error('Usage: node script.js <filepath> <string>');
-  process.exit(1);
 }
 
 const filePath = process.argv[2];
